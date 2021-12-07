@@ -20,7 +20,7 @@
     "prettier"
   ],
   "rules": {
-    "class-methods-use-this":"off",
+    "class-methods-use-this": "off",
     "@typescript-eslint/no-unused-vars": [
       "error", {
         "argsIgnorePattern": "_"
@@ -28,6 +28,18 @@
     ],
     "prettier/prettier": "error",
     "camelcase": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      }
+    ],
+    "no-useless-constructor":"off",
     "import/extensions": [
       "error",
       "ignorePackages",

@@ -6,10 +6,10 @@
   "password": "imobpower",
   "database": "postgres",
   "migrations": [
-    "./src/shared/database/migrations/*.ts"
+    "./src/shared/infra/typeorm/migrations/*.ts"
   ],
   "cli": {
-    "migrationsDir": "src/shared/database/migrations"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   },
-  "entities": ["src/modules/users/infra/typeorm/entities/*.ts", "src/modules/appointments/infra/typeorm/entities/Appointment.ts"]
+  "entities": ["src/modules/users/infra/typeorm/entities/*.ts", "src/modules/appointments/infra/typeorm/entities/*.ts"]
 }
