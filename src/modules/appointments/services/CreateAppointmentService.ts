@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { startOfHour } from 'date-fns';
 import { injectable, inject } from 'tsyringe';
 import AppError from '@shared/errors/AppError';
@@ -29,6 +30,7 @@ class CreateAppointmentService {
       provider_id,
       date: appointmentDate,
     });
+
 
     return appointment;
   }

@@ -4,6 +4,7 @@ import Appointment from '../infra/typeorm/entities/Appointment';
 interface IAppointmentsRepository {
   create(data: ICreateAppointmentDTO): Promise<Appointment>;
   findByDate(date: Date): Promise<Appointment | undefined>;
+  list(): Promise<Appointment[]>;
 }
 
 export default IAppointmentsRepository;

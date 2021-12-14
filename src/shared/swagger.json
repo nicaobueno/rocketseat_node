@@ -1,0 +1,51 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API GoBarber",
+    "description": "App criado para estudo na Rockseat",
+    "termsOfService": "http://localhost:3000/v1/terms",
+    "contact": {
+      "email": "nicolas.bueno@imobpower.com"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/v1",
+      "description": "API Produção"
+    }
+  ],
+  "paths": {
+    "/appointments": {
+      "post": {
+        "summary": "Cadastro de Agendamentos",
+        "description": "Rota para se cadastrar os agendamentos dos clientes",
+        "tags": ["Appointments"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Appointments"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Appointments": {
+        "type": "object",
+        "properties": {
+          "provider_id":{
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
