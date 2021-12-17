@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  gobarber:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "imobpower"
+    ports:
+      - "5432:5432"
+    volumes:
+      - C:\Users\Nicolas\Desktop\Workplace:/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "nicaobueno@gmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "imobpower10"
+    ports:
+      - "2345:80"
+    depends_on:
+      - gobarber
+    networks:
+      - postgres-compose-network
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
